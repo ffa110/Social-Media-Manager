@@ -9,12 +9,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 /**
  *
  * @author fahadabunayyan
  */
 
 @Entity // tells Hibernate to make a table our of this
+@Table("user")
 public class User 
 {
     @Id
@@ -28,6 +30,24 @@ public class User
     /**
      * @return the id
      */
+    
+    public boolean isValid()
+    {
+        if(userName.length() > 3 && userName.length() < 50)
+        {
+            if(email.contains("@") && email.length() > 4)
+            {
+                if(password.length() >= 8 && password.length() <= 32)
+                {
+                    return true;
+                }
+            }
+        }
+       
+        return false;
+        
+    }
+    
     public Integer getId() {
         return id;
     }
