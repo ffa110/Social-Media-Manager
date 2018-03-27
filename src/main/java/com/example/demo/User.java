@@ -16,7 +16,6 @@ import javax.persistence.Table;
  */
 
 @Entity // tells Hibernate to make a table our of this
-@Table("user")
 public class User 
 {
     @Id
