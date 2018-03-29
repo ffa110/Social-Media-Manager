@@ -16,15 +16,5 @@ public class SocialMediaManagerApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SocialMediaManagerApplication.class, args);
                 
-//                User newUser = new User();
-//                newUser.setUserName("fahadff");
-//                newUser.setPassword("password");
-//                newUser.setEmail("ffa110@psu.edu");
-//                newUser.setIsAuth(true);
-//                
-//                repository.save(newUser);
-//                
-//                System.out.print("Added ====> " +repository.findByUserName("fahadff"));
-                
 	}
 }
