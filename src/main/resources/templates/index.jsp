@@ -1,3 +1,10 @@
+<%-- 
+    Document   : index
+    Created on : Apr 2, 2018, 3:38:43 PM
+    Author     : fahadabunayyan
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>

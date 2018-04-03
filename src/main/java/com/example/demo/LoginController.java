@@ -21,6 +21,12 @@ public class LoginController
     
 	@Autowired 
 	private UserRepository userRepository;
+        
+        @RequestMapping("/password")
+        public String getPassword()
+        {
+            return "password";
+        }
 
 	@GetMapping(path="/login") // Map ONLY GET Requests
 	public @ResponseBody String addNewUser (@RequestParam String username
