@@ -22,13 +22,19 @@ public class LoginController
 	@Autowired 
 	private UserRepository userRepository;
         
+        @RequestMapping("/login")
+        public String getLogin()
+        {
+            return "login";
+        }
+        
         @RequestMapping("/password")
         public String getPassword()
         {
             return "password";
         }
 
-	@GetMapping(path="/login") // Map ONLY GET Requests
+	@GetMapping(path="/login1") // Map ONLY GET Requests
 	public @ResponseBody String addNewUser (@RequestParam String username
                         , @RequestParam String password) 
         {

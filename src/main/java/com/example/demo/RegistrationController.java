@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 
 @Controller   
-@RequestMapping(path="/registration") // This means URL's start with /demo (after Application path)
+@RequestMapping(path="/registration1") // This means URL's start with /demo (after Application path)
 public class RegistrationController 
 {
     
