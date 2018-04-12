@@ -36,7 +36,7 @@ public class LoginController
 
             if(user.get(0).getUserName().equals(username) && user.get(0).getPassword().equals(password))
             {
-                return "<html><h1>Successful</h1><meta http-equiv=\"refresh\" content=\"5; url=http://localhost:8080/connect\" /></html>";
+                return "<html><meta http-equiv=\"refresh\" content=\"0; url=http://localhost:8080/connect\" /></html>";
 //                    return "<h3 style=\"color:green\">Loged In Successfully!</h3>";
             }
             

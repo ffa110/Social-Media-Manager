@@ -30,7 +30,7 @@ public class SearchController
     public @ResponseBody String returnSearch(@RequestParam String search
                         , @RequestParam String option) 
         {
-            return "<html><h1>Successful</h1><meta http-equiv=\"refresh\" content=\"0; url=http://localhost:8080/searchResult\" /></html>";
+            return "<html><meta http-equiv=\"refresh\" content=\"0; url=http://localhost:8080/searchResult\" /></html>";
             
         }
     @RequestMapping("/searchResult")

@@ -47,12 +47,12 @@ public class RegistrationController
                     if(userRepository.findByUserName(username).isEmpty() && userRepository.findByEmail(email).isEmpty())
                     {
                         userRepository.save(newUser);
-                        return "<html><h1>Successful Registration</h1><meta http-equiv=\"refresh\" content=\"5; url=http://localhost:8080/login\" /></html>";   
+                        return "<html><h1 style=\"color: green;\">Successful Registration</h1><meta http-equiv=\"refresh\" content=\"2; url=http://localhost:8080/login\" /></html>";   
                     }
                 }
             }
             
-		return "<html><h1>failed</h1><meta http-equiv=\"refresh\" content=\"5; url=http://localhost:8080/signup\" /></html>";
+		return "<html><h1>Failed</h1><meta http-equiv=\"refresh\" content=\"2; url=http://localhost:8080/signup\" /></html>";
             
 	}
 
