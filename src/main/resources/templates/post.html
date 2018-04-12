@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Social Media Manager</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <style>
+      html body {
+          background-color: #FAFFFF;
+      }
+      #outer
+      {
+        width:100%;
+        text-align: center;
+      }
+      .inner
+      {
+        display: inline-block;
+      }
+
+
+
+  </style>
+
+  <script>
+      $(function () {
+          $("#header").load("header.html");
+          $("#footer").load("footer.html");
+
+      })
+  </script>
+ 
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index">Social Media Manager</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li><a href="connect">Home</a></li>
+                <li><a href="post">Create Post</a></li>
+                <li><a href="timelines">View Timelines</a></li>
+                <li><a href="search">Search</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="index"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+  
+<div class="container">
+  <h3>Create  Post</h3>
+
+
+  <center>
+<form method="get">
+  <div class="form-group">
+
+    <label for="create-post">Create Post:</label>
+
+    <textarea class="form-control" style="font-size: large; width: 500px; alignment-baseline: center" rows="3" id="create-post" name="post"></textarea>
+
+  </div>
+
+  <label>
+    <img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/square-twitter-256.png" width="45" height="45"><br>
+    <input type="checkbox"  id="inlineCheckbox1" name="twitter"  onclick="showOption('firstOption')">
+  </label>
+  <label>
+    <img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/square-facebook-256.png" width="45" height="45"><br>
+    <input type="checkbox"  id="inlineCheckbox2" name="facebook" onselect="on" onclick="showOption('secondOption')">
+  </label>
+  <label>
+    <img src="http://1000logos.net/wp-content/uploads/2017/03/LinkedIn-Logo-500x500.png" width="45" height="45"><br>
+    <input type="checkbox" id="inlineCheckbox3" name="linkedin" onclick="showOption('thirdOption')">
+  </label>
+
+
+  <div class="row">
+    <button class="btn btn-lg btn-primary " style="width: 100px;" type="button" onclick="document.getElementById('create-post').value = ''">Clear</button>
+    <button class="btn btn-lg btn-success" style="width: 120px; scroll-padding-inline: 10px" type="submit">Post</button>
+  </div>
+
+</form>
+  </center>
+
+
+</div>
+
+
+<div class="navbar navbar-inverse navbar-fixed-bottom">
+    <div class="container">
+        <p class="navbar-text">© All rights reserved | Social Media Manager</p>
+    </div>
+</div>
+
+</body>
+</html>

@@ -13,12 +13,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @author fahadabunayyan
  */
    @Controller
-public class IRegistrationController 
-{
- 
-    @RequestMapping("/signup")
-    public String getRegistration()
+    public class IRegistrationController 
     {
-        return "signup";
-    }
+
+        @RequestMapping("/signu")
+        public String getRegistration()
+        {
+            return "signup";
+        }
 }

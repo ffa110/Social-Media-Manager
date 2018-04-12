@@ -10,21 +10,28 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 
 @Controller   
-@RequestMapping(path="/registration1") // This means URL's start with /demo (after Application path)
+
 public class RegistrationController 
 {
+    
+    @RequestMapping(path="/signup") // This means URL's start with /demo (after Application path)
+    public String getSignup()
+    {
+        return "signup";
+    }
     
 	@Autowired 
 	private UserRepository userRepository;
 
-	@GetMapping(path="/add") // Map ONLY GET Requests
-	public @ResponseBody String addNewUser (@RequestParam String username
-			, @RequestParam String email
+	@PostMapping(path="/signup") // Map ONLY GET Requests
+	public @ResponseBody String addNewUser (@RequestParam String email
+                        , @RequestParam String username
                         , @RequestParam String password) 
         {
 
@@ -40,13 +47,12 @@ public class RegistrationController
                     if(userRepository.findByUserName(username).isEmpty() && userRepository.findByEmail(email).isEmpty())
                     {
                         userRepository.save(newUser);
-                        return "Username: " + newUser.getUserName() + "<br>Email: " + newUser.getEmail() + 
-                               "<br><h3 style=\"color:green\">Registered Successfully</h3";   
+                        return "<html><h1>Successful Registration</h1><meta http-equiv=\"refresh\" content=\"5; url=http://localhost:8080/login\" /></html>";   
                     }
                 }
             }
             
-		return "Registeration Failed";
+		return "<html><h1>failed</h1><meta http-equiv=\"refresh\" content=\"5; url=http://localhost:8080/signup\" /></html>";
             
 	}
 
