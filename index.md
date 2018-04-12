@@ -61,8 +61,10 @@ The features and functionalities that will be created in the first checkpoint ar
      * The interface of the application
         * User Registration (page)
         * Login (page)
+        * Connect to Social Media Accounts (page)
         * Create Post (page)
         * View My Social Media Timelines (page)
+        * Search (page)
      
      
 - **Checkpoint 3:**
