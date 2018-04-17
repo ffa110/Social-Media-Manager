@@ -12,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -28,10 +29,11 @@ public class LoginController
         {
             return "login";
         }
-        @GetMapping("/login2")
+        @PostMapping("/login")
         public @ResponseBody String login (@RequestParam String username
                         , @RequestParam String password) 
         {
+            
             List<User> user = userRepository.findByUserName(username);
 
             if(user.get(0).getUserName().equals(username) && user.get(0).getPassword().equals(password))

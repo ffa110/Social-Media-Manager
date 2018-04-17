@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
   <title>Social Media Manager</title>
   <meta charset="utf-8">
@@ -271,6 +272,12 @@
     </div>
 </nav>
 
+    <div th:if="${param.error}">
+            Invalid username and password.
+        </div>
+        <div th:if="${param.logout}">
+            You have been logged out.
+        </div>
 
 
 
@@ -279,7 +286,7 @@
 		<!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
 		<img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
 		<p id="profile-name" class="profile-name-card"></p>
-		<form class="form-signin" action="login2" method="get">
+		<form class="form-signin" action="@{/login}" method="post">
 			<span id="reauth-email" class="reauth-email"></span>
 			<input type="text" id="inputEmail" name="username" class="form-control" placeholder="Email address" required autofocus>
 			<input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
@@ -288,7 +295,7 @@
 					<input type="checkbox" value="remember-me"> Remember me
 				</label>
 			</div>
-			<button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign in</button>
+			<button class="btn btn-lg btn-primary btn-block btn-signin" type="submit" >Sign in</button>
 		</form><!-- /form -->
 		<a href="#" class="forgot-password">
 			Forgot the password?

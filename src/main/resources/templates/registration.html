@@ -277,11 +277,11 @@
 	<div class="card card-container">
 		<!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
 		<p id="profile-name" class="profile-name-card"></p>
-		<form class="form-signin">
+                <form class="form-signin" method="post">
 			<span id="reauth-email" class="reauth-email"></span>
-			<input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-			<input type="text"  class="form-control" placeholder="Username" required autofocus>
-			<input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+			<input type="email" id="inputEmail" class="form-control" placeholder="Email address" name="email" required autofocus>
+			<input type="text"  class="form-control" placeholder="Username" name="username" required autofocus>
+			<input type="password" id="inputPassword" class="form-control" name="password" placeholder="Password" required>
 			<input type="password" class="form-control" placeholder="Confirm Password" required>
 			<div id="remember" class="checkbox">
 				<label>

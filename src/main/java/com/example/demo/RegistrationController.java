@@ -7,6 +7,7 @@ package com.example.demo;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,6 +20,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 public class RegistrationController 
 {
+    BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+		
     
     @RequestMapping(path="/signup") // This means URL's start with /demo (after Application path)
     public String getSignup()
@@ -37,6 +40,7 @@ public class RegistrationController
 
             if(username.length() > 0)
             {
+            
             User newUser = new User();
             newUser.setUserName(username);
             newUser.setEmail(email);
@@ -46,6 +50,9 @@ public class RegistrationController
                 {
                     if(userRepository.findByUserName(username).isEmpty() && userRepository.findByEmail(email).isEmpty())
                     {
+                        String hashedPassword = passwordEncoder.encode(password);
+                        newUser.setPassword(hashedPassword);
+                        
                         userRepository.save(newUser);
                         return "<html><h1 style=\"color: green;\">Successful Registration</h1><meta http-equiv=\"refresh\" content=\"2; url=http://localhost:8080/login\" /></html>";   
                     }
