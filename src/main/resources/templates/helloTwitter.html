@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout/default">
+<head>
+  <title>Social Media Manager</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <style>
+    html body {
+      background-color: #FAFFFF;
+    }
+    .scrollable {
+      height: 400px;
+      overflow: scroll;
+      border: 1px solid black;
+      background-color: white;
+
+    }
+    .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+      background-color: #F4F4F4;
+    }
+
+
+  </style>
+
+  <script>
+      $(function () {
+          $("#header").load("header.html");
+          $("#footer").load("footer.html");
+
+      })
+      $(function () {
+          for(var i = 0; i < 15; i++)
+          {
+              document.getElementById("parentID")
+          }
+      })
+
+  </script>
+
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="connect">Social Media Manager</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li><a href="connect">Home</a></li>
+                <li><a href="post">Create Post</a></li>
+                <li><a href="timelines">View Timelines</a></li>
+                <li><a href="search">Search</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="index"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+
+<div class="container">
+  <h3>Timelines</h3>
+
+<div class="container text-center">
+  <h3>Your Timelines</h3><br>
+  <div class="row">
+    <div class="col-sm-4">
+      <h4>Twitter</h4>
+      <div class="scrollable">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <td><b>Usernames</b></td>
+                        <td><b>Tweets</b></td>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                <th:block th:each="tweet:${tweets}">
+                    <tr>
+                        
+                        <td style="text-align: center; max-width:30px;"><img class="img-thumbnail" th:src="${tweet.profileImageUrl}" height="50" width="50"><br><p th:text="${tweet.fromUser}"></p></td>
+                        <td style="text-align: left; max-width:210px;" th:text="${tweet.text}"></td>
+                    </tr>
+                </th:block>
+                </tbody>
+            </table>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <h4>Facebook</h4>
+      <div class="scrollable">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <td><b>Usernames</b></td>
+            <td><b>Post</b></td>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><img src="https://openclipart.org/image/2400px/svg_to_png/211821/matt-icons_preferences-desktop-personal.png" height="50" width="50"><br>1 fahadff </td>
+            <td style="text-align: left">#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test</td>
+          </tr>
+          <tr>
+            <td><img src="https://openclipart.org/image/2400px/svg_to_png/211821/matt-icons_preferences-desktop-personal.png" height="50" width="50"><br>1 fahadff </td>
+            <td style="text-align: left">#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test</td>
+          </tr>
+          <tr>
+            <td><img src="https://openclipart.org/image/2400px/svg_to_png/211821/matt-icons_preferences-desktop-personal.png" height="50" width="50"><br>1 fahadff </td>
+            <td style="text-align: left">#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test</td>
+          </tr>
+          <tr>
+            <td><img src="https://openclipart.org/image/2400px/svg_to_png/211821/matt-icons_preferences-desktop-personal.png" height="50" width="50"><br>1 fahadff </td>
+            <td style="text-align: left">#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test</td>
+          </tr>
+          <tr>
+            <td><img src="https://openclipart.org/image/2400px/svg_to_png/211821/matt-icons_preferences-desktop-personal.png" height="50" width="50"><br>1 fahadff </td>
+            <td style="text-align: left">#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test</td>
+          </tr>
+          <tr>
+            <td><img src="https://openclipart.org/image/2400px/svg_to_png/211821/matt-icons_preferences-desktop-personal.png" height="50" width="50"><br>1 fahadff </td>
+            <td style="text-align: left">#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test</td>
+          </tr>
+          <tr>
+            <td><img src="https://openclipart.org/image/2400px/svg_to_png/211821/matt-icons_preferences-desktop-personal.png" height="50" width="50"><br>1 fahadff </td>
+            <td style="text-align: left">#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+
+    <div class="col-sm-4">
+      <h4>LinkedIn</h4>
+      <div class="scrollable">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <td><b>Usernames</b></td>
+            <td><b>Post</b></td>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><img src="https://openclipart.org/image/2400px/svg_to_png/211821/matt-icons_preferences-desktop-personal.png" height="50" width="50"><br>1 fahadff </td>
+            <td style="text-align: left">#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test</td>
+          </tr>
+          <tr>
+            <td><img src="https://openclipart.org/image/2400px/svg_to_png/211821/matt-icons_preferences-desktop-personal.png" height="50" width="50"><br>1 fahadff </td>
+            <td style="text-align: left">#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test</td>
+          </tr>
+          <tr>
+            <td><img src="https://openclipart.org/image/2400px/svg_to_png/211821/matt-icons_preferences-desktop-personal.png" height="50" width="50"><br>1 fahadff </td>
+            <td style="text-align: left">#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test</td>
+          </tr>
+          <tr>
+            <td><img src="https://openclipart.org/image/2400px/svg_to_png/211821/matt-icons_preferences-desktop-personal.png" height="50" width="50"><br>1 fahadff </td>
+            <td style="text-align: left">#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test</td>
+          </tr>
+          <tr>
+            <td><img src="https://openclipart.org/image/2400px/svg_to_png/211821/matt-icons_preferences-desktop-personal.png" height="50" width="50"><br>1 fahadff </td>
+            <td style="text-align: left">#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test</td>
+          </tr>
+          <tr>
+            <td><img src="https://openclipart.org/image/2400px/svg_to_png/211821/matt-icons_preferences-desktop-personal.png" height="50" width="50"><br>1 fahadff </td>
+            <td style="text-align: left">#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test</td>
+          </tr>
+          <tr>
+            <td><img src="https://openclipart.org/image/2400px/svg_to_png/211821/matt-icons_preferences-desktop-personal.png" height="50" width="50"><br>1 fahadff </td>
+            <td style="text-align: left">#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+
+<div class="navbar navbar-inverse navbar-fixed-bottom">
+    <div class="container">
+        <p class="navbar-text">© All rights reserved | Social Media Manager</p>
+    </div>
+</div>
+
+</body>
+</html>

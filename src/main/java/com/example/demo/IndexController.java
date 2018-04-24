@@ -29,4 +29,10 @@ public class IndexController
         return "about";
     }
     
+    @RequestMapping("/media")
+    public String getConnect()
+    {
+        return "media";
+    }
+    
 }

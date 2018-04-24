@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout/default">
+<head>
+    <title>Hello Github</title>
+</head>
+<body>
+<section layout:fragment="content">
+    <div class="container">
+
+        <h3>Hello, <span th:text="${profile.name}">Some User</span>!</h3>
+    </div>
+</section>
+</body>
+</html>

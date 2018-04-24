@@ -80,8 +80,15 @@
             <div class="col-sm-4">
                 <h4>Twitter</h4>
                 <img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/square-twitter-256.png" width="150" height="150"><br><br>
-                <button type="button" class="btn btn-success" onclick="window.location.href = 'http://www.twitter.com';">Connect</button>
-
+                <form action="/connect/twitter" method="POST">
+                <div class="formInfo">
+                    <p>
+                <button class="btn btn-success" type="submit" name="action">Connect
+                 <i class="mdi-social-group-add left"></i>
+                </button>
+                    </p>
+            </div>
+        </form>
             </div>
             <div class="col-sm-4">
                 <h4>Facebook</h4>

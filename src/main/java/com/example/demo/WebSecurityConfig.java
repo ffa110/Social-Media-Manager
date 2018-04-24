@@ -24,6 +24,7 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter
 {
+    
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         
@@ -45,13 +46,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter
     @Override
     public UserDetailsService userDetailsService() 
     {
-        
-        UserDetails user =
-             User.withDefaultPasswordEncoder()
+
+        UserDetails user = User.withDefaultPasswordEncoder()
                 .username("user")
                 .password("fahad")
                 .roles("USER")
                 .build();
+        
+        
+        System.out.print("Username: " + user.getUsername() + "\nPassword: " + user.getPassword());
 
         return new InMemoryUserDetailsManager(user);
     }

@@ -16,10 +16,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class ConnectController 
 {
-    @RequestMapping("/connect")
-    public String getConnect()
-    {
-        return "connect";
-    }
+
     
 }
