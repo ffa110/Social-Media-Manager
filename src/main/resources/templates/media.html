@@ -93,15 +93,20 @@
             <div class="col-sm-4">
                 <h4>Facebook</h4>
                 <img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/square-facebook-256.png" width="150" height="150"><br><br>
-                <button type="button" class="btn btn-success" onclick="window.location.href = 'http://www.facebook.com';">Connect</button>
-
+                <form action="/connect/facebook" method="POST">
+			<input type="hidden" name="scope" value="user_posts" />
+			<button type="submit" class="btn btn-success">Connect</button>
+		</form>
             </div>
 
 
             <div class="col-sm-4">
                 <h4>LinkedIn</h4>
                 <img src="http://1000logos.net/wp-content/uploads/2017/03/LinkedIn-Logo-500x500.png" width="150" height="150"><br><br>
-                <button type="button" class="btn btn-success" onclick="window.location.href = 'http://www.linkedin.com';">Connect</button>
+                    <form action="/connect/linkedin" method="POST">
+                         <input type="hidden" name="scope" value="r_basicprofile,r_emailaddress" />
+                        <button type="submit" class="btn btn-success" >Connect</button>
+                    </form>
             </div>
 
         </div>

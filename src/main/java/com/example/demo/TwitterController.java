@@ -5,7 +5,6 @@
  */
 package com.example.demo;
 
-import java.util.ArrayList;
 import java.util.List;
 import javax.inject.Inject;
 import org.springframework.social.connect.ConnectionRepository;
@@ -21,14 +20,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 
 @Controller
-public class SocialMediaController 
+public class TwitterController 
 {
     
     private Twitter twitter;
     private ConnectionRepository connectionRepository;
 
     @Inject
-    public SocialMediaController(Twitter twitter, ConnectionRepository connectionRepository) {
+    public TwitterController(Twitter twitter, ConnectionRepository connectionRepository) {
         this.twitter = twitter;
         this.connectionRepository = connectionRepository;
     }
@@ -50,5 +49,6 @@ public class SocialMediaController
         
         return "helloTwitter";
     }
+    
     
 }

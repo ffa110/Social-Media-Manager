@@ -91,11 +91,31 @@
             <version>2.0.0.BUILD-SNAPSHOT</version>
         </dependency>
         <dependency>
+            <groupId>org.springframework.social</groupId>
+            <artifactId>spring-social-facebook-autoconfigure</artifactId>
+            <version>3.0.0.BUILD-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.social</groupId>
+            <artifactId>spring-social-linkedin-autoconfigure</artifactId>
+            <version>2.0.0.BUILD-SNAPSHOT</version>
+        </dependency>
+        <dependency>
           <groupId>org.springframework.social</groupId>
           <artifactId>spring-social-twitter</artifactId>
           <version>1.1.2.RELEASE</version>
         </dependency>
-
+        <dependency>
+            <groupId>org.springframework.social</groupId>
+            <artifactId>spring-social-facebook</artifactId>
+            <version>2.0.0.M1</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.social</groupId>
+            <artifactId>spring-social-linkedin</artifactId>
+            <version>2.0.0.BUILD-SNAPSHOT</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
