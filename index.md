@@ -74,8 +74,7 @@ The features and functionalities that will be created in the first checkpoint ar
      
 - **Final Checkpoint:**    
      * The application will be able to create posts and view timelines
-     * The application will be installed on a server
-     * The application will be ready
+     * Spring Security Login Integration with Database
 
 ## Project Justification:
 
