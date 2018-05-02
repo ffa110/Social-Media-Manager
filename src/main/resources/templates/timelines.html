@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout/default">
 <head>
   <title>Social Media Manager</title>
   <meta charset="utf-8">
@@ -80,44 +82,24 @@
     <div class="col-sm-4">
       <h4>Twitter</h4>
       <div class="scrollable">
-        <table class="table table-striped">
-          <thead>
-          <tr>
-            <td><b>Usernames</b></td>
-            <td><b>Tweet</b></td>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td><img src="https://openclipart.org/image/2400px/svg_to_png/211821/matt-icons_preferences-desktop-personal.png" height="50" width="50"><br>1 fahadff </td>
-            <td style="text-align: left">#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test</td>
-          </tr>
-          <tr>
-            <td><img src="https://openclipart.org/image/2400px/svg_to_png/211821/matt-icons_preferences-desktop-personal.png" height="50" width="50"><br>1 fahadff </td>
-            <td style="text-align: left">#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test</td>
-          </tr>
-          <tr>
-            <td><img src="https://openclipart.org/image/2400px/svg_to_png/211821/matt-icons_preferences-desktop-personal.png" height="50" width="50"><br>1 fahadff </td>
-            <td style="text-align: left">#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test</td>
-          </tr>
-          <tr>
-            <td><img src="https://openclipart.org/image/2400px/svg_to_png/211821/matt-icons_preferences-desktop-personal.png" height="50" width="50"><br>1 fahadff </td>
-            <td style="text-align: left">#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test</td>
-          </tr>
-          <tr>
-            <td><img src="https://openclipart.org/image/2400px/svg_to_png/211821/matt-icons_preferences-desktop-personal.png" height="50" width="50"><br>1 fahadff </td>
-            <td style="text-align: left">#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test</td>
-          </tr>
-          <tr>
-            <td><img src="https://openclipart.org/image/2400px/svg_to_png/211821/matt-icons_preferences-desktop-personal.png" height="50" width="50"><br>1 fahadff </td>
-            <td style="text-align: left">#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test</td>
-          </tr>
-          <tr>
-            <td><img src="https://openclipart.org/image/2400px/svg_to_png/211821/matt-icons_preferences-desktop-personal.png" height="50" width="50"><br>1 fahadff </td>
-            <td style="text-align: left">#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test</td>
-          </tr>
-          </tbody>
-        </table>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <td><b>Usernames</b></td>
+                        <td><b>Tweets</b></td>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                <th:block th:each="tweet:${tweets}">
+                    <tr>
+                        
+                        <td style="text-align: center; max-width:30px;"><img class="img-thumbnail" th:src="${tweet.profileImageUrl}" height="50" width="50"><br><p th:text="${tweet.fromUser}"></p></td>
+                        <td style="text-align: left; max-width:210px;" th:text="${tweet.text}"></td>
+                    </tr>
+                </th:block>
+                </tbody>
+            </table>
       </div>
     </div>
     <div class="col-sm-4">
@@ -133,31 +115,7 @@
           <tbody>
           <tr>
             <td><img src="https://openclipart.org/image/2400px/svg_to_png/211821/matt-icons_preferences-desktop-personal.png" height="50" width="50"><br>1 fahadff </td>
-            <td style="text-align: left">#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test</td>
-          </tr>
-          <tr>
-            <td><img src="https://openclipart.org/image/2400px/svg_to_png/211821/matt-icons_preferences-desktop-personal.png" height="50" width="50"><br>1 fahadff </td>
-            <td style="text-align: left">#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test</td>
-          </tr>
-          <tr>
-            <td><img src="https://openclipart.org/image/2400px/svg_to_png/211821/matt-icons_preferences-desktop-personal.png" height="50" width="50"><br>1 fahadff </td>
-            <td style="text-align: left">#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test</td>
-          </tr>
-          <tr>
-            <td><img src="https://openclipart.org/image/2400px/svg_to_png/211821/matt-icons_preferences-desktop-personal.png" height="50" width="50"><br>1 fahadff </td>
-            <td style="text-align: left">#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test</td>
-          </tr>
-          <tr>
-            <td><img src="https://openclipart.org/image/2400px/svg_to_png/211821/matt-icons_preferences-desktop-personal.png" height="50" width="50"><br>1 fahadff </td>
-            <td style="text-align: left">#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test</td>
-          </tr>
-          <tr>
-            <td><img src="https://openclipart.org/image/2400px/svg_to_png/211821/matt-icons_preferences-desktop-personal.png" height="50" width="50"><br>1 fahadff </td>
-            <td style="text-align: left">#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test</td>
-          </tr>
-          <tr>
-            <td><img src="https://openclipart.org/image/2400px/svg_to_png/211821/matt-icons_preferences-desktop-personal.png" height="50" width="50"><br>1 fahadff </td>
-            <td style="text-align: left">#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test</td>
+            <td style="text-align: left">Facebook API is not working.</td>
           </tr>
           </tbody>
         </table>
@@ -176,34 +134,10 @@
           </tr>
           </thead>
           <tbody>
-          <tr>
-            <td><img src="https://openclipart.org/image/2400px/svg_to_png/211821/matt-icons_preferences-desktop-personal.png" height="50" width="50"><br>1 fahadff </td>
-            <td style="text-align: left">#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test</td>
-          </tr>
-          <tr>
-            <td><img src="https://openclipart.org/image/2400px/svg_to_png/211821/matt-icons_preferences-desktop-personal.png" height="50" width="50"><br>1 fahadff </td>
-            <td style="text-align: left">#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test</td>
-          </tr>
-          <tr>
-            <td><img src="https://openclipart.org/image/2400px/svg_to_png/211821/matt-icons_preferences-desktop-personal.png" height="50" width="50"><br>1 fahadff </td>
-            <td style="text-align: left">#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test</td>
-          </tr>
-          <tr>
-            <td><img src="https://openclipart.org/image/2400px/svg_to_png/211821/matt-icons_preferences-desktop-personal.png" height="50" width="50"><br>1 fahadff </td>
-            <td style="text-align: left">#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test</td>
-          </tr>
-          <tr>
-            <td><img src="https://openclipart.org/image/2400px/svg_to_png/211821/matt-icons_preferences-desktop-personal.png" height="50" width="50"><br>1 fahadff </td>
-            <td style="text-align: left">#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test</td>
-          </tr>
-          <tr>
-            <td><img src="https://openclipart.org/image/2400px/svg_to_png/211821/matt-icons_preferences-desktop-personal.png" height="50" width="50"><br>1 fahadff </td>
-            <td style="text-align: left">#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test</td>
-          </tr>
-          <tr>
-            <td><img src="https://openclipart.org/image/2400px/svg_to_png/211821/matt-icons_preferences-desktop-personal.png" height="50" width="50"><br>1 fahadff </td>
-            <td style="text-align: left">#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test#SMM This is a test</td>
-          </tr>
+              <tr>
+                <td style="text-align: center; max-width:30px;"><img class="img-thumbnail" th:src="${linkedinProfile.profilePictureUrl}" height="50" width="50"><br><p th:text="${linkedinProfile.firstName}"></p> <p th:text="${linkedinProfile.lastName}"></p></td>
+                <td style="text-align: left; max-width:210px;" th:text="${linkedinProfile.headline}"></td>
+              </tr>
           </tbody>
         </table>
       </div>

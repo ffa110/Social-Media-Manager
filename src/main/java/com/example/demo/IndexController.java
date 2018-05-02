@@ -30,9 +30,15 @@ public class IndexController
     }
     
     @RequestMapping("/media")
-    public String getConnect()
+    public String getMedia()
     {
         return "media";
+    }
+    
+    @RequestMapping("mediaConnect")
+    public String getMediaConnect()
+    {
+        return "mediaConnect";
     }
     
 }

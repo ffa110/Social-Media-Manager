@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Social Media Manager</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <style>
+        html body {
+            background-color: #FAFFFF;
+        }
+        .scrollable {
+            height: 400px;
+            overflow: scroll;
+            border: 1px solid black;
+            background-color: white;
+
+        }
+        .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+            background-color: #F4F4F4;
+        }
+
+
+    </style>
+
+    <script>
+        $(function () {
+            $("#header").load("header.html");
+            $("#footer").load("footer.html");
+
+        })
+        $(function () {
+            for(var i = 0; i < 15; i++)
+            {
+                document.getElementById("parentID")
+            }
+        })
+
+    </script>
+
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="media">Social Media Manager</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li><a href="media">Home</a></li>
+                <li><a href="post">Create Post</a></li>
+                <li><a href="timelines">View Timelines</a></li>
+                <li><a href="search">Search</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+
+<div class="container">
+    <h3 style="color: darkgreen">Please connect to at least two Social Media Accounts</h3>
+
+    <div class="container text-center">
+        <h3>Connect to Your Social Media Accounts</h3><br>
+        <div class="row">
+            <div class="col-sm-4">
+                <h4>Twitter</h4>
+                <img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/square-twitter-256.png" width="150" height="150"><br><br>
+                <form action="/connect/twitter" method="POST">
+                <div class="formInfo">
+                    <p>
+                <button class="btn btn-success" type="submit" name="action">Connect
+                 <i class="mdi-social-group-add left"></i>
+                </button>
+                    </p>
+            </div>
+        </form>
+            </div>
+            <div class="col-sm-4">
+                <h4>Facebook</h4>
+                <img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/square-facebook-256.png" width="150" height="150"><br><br>
+                <form action="/connect/facebook" method="POST">
+			<input type="hidden" name="scope" value="user_posts" />
+			<button type="submit" class="btn btn-success">Connect</button>
+		</form>
+            </div>
+
+
+            <div class="col-sm-4">
+                <h4>LinkedIn</h4>
+                <img src="http://1000logos.net/wp-content/uploads/2017/03/LinkedIn-Logo-500x500.png" width="150" height="150"><br><br>
+                    <form action="/connect/linkedin" method="POST">
+                         <input type="hidden" name="scope" value="r_basicprofile,r_emailaddress" />
+                        <button type="submit" class="btn btn-success" >Connect</button>
+                    </form>
+            </div>
+
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+
+
+
+<div class="navbar navbar-inverse navbar-fixed-bottom">
+    <div class="container">
+        <p class="navbar-text">© All rights reserved | Social Media Manager</p>
+    </div>
+</div>
+
+</body>
+</html>
