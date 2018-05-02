@@ -5,8 +5,13 @@
  */
 package com.example.demo;
 
+import java.util.List;
 import org.springframework.social.connect.ConnectionRepository;
 import org.springframework.social.linkedin.api.LinkedIn;
+import org.springframework.social.linkedin.api.LinkedInNetworkUpdate;
+import org.springframework.social.linkedin.api.LinkedInProfile;
+import org.springframework.social.linkedin.api.LinkedInProfileFull;
+import org.springframework.social.linkedin.api.Post;
 import org.springframework.social.linkedin.api.ProfileOperations;
 import org.springframework.social.twitter.api.Twitter;
 import org.springframework.stereotype.Controller;
@@ -23,6 +28,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class LinkedInController 
 {
     private LinkedIn linkedin;
+    
     private ConnectionRepository connectionRepository;
     
     public LinkedInController(LinkedIn linkedin, ConnectionRepository connectionRepository)
@@ -31,7 +37,7 @@ public class LinkedInController
         this.connectionRepository = connectionRepository;
     }
     
-    @RequestMapping("/linkedin")
+    @RequestMapping("/linkdin")
     public String helloLinkedin(Model model)
     {
         if(connectionRepository.findPrimaryConnection(LinkedIn.class) == null) 
@@ -39,6 +45,13 @@ public class LinkedInController
             return "redirect:/connect/linkedin";
         }
         
+        LinkedInProfileFull profile = linkedin.profileOperations().getUserProfileFull();
+         List<LinkedInNetworkUpdate> test = linkedin.networkUpdateOperations().getNetworkUpdates();
+//        
+  //      List<Post> linkedinPosts = linkedin.groupOperations().getPosts(Integer.BYTES).getPosts();
+        
+//        model.addAttribute("update", networkUpdates);
+
         ProfileOperations user = linkedin.profileOperations();
         System.out.println("Linkedin User ====> "+user.getUserProfile().getFirstName() + " " + user.getUserProfile().getLastName());
         model.addAttribute("linkedinProfile", linkedin.profileOperations().getUserProfileFull());

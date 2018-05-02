@@ -31,7 +31,7 @@ public class CustomizeLogoutSuccessHandler implements LogoutSuccessHandler{
 		
 		response.setStatus(HttpServletResponse.SC_OK);
         //redirect to login
-		response.sendRedirect("/logoutsuccessful");
+		response.sendRedirect("/login");
 	}
 	
 }
